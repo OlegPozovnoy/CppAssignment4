@@ -158,8 +158,8 @@ outputStatistics calcStat(int* vals, const int& size) {
 	int counter=1; //number of consequent equal vals[i] - we use that the array is already sorted
 	int maxfrequency = 2;//frequency of current mode, =2 because I read that if max freq = 1 - there's no mode by definition.
 	
-	for (auto i = 0; i + 1 < size; i++) {
-		if (vals[i] != vals[i + 1]) {
+	for (auto i = 0; i  < size; i++) {
+		if (i==size-1 || vals[i] != vals[i + 1]) {
 			if (counter == maxfrequency) {// a vals[i] is as frequent as old modes 
 				result.mode.push_back(vals[i]);
 			}
